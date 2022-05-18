@@ -6,6 +6,7 @@ import java.util.Scanner;
 * @author Atik
 * Address Book System using MySQL
 * UC1- ability to create Table wit name, address, city , phone, email etc..
+* UC2- ability to add contact details
 * */
 public class AddressBookMain {
     public static void main(String[] args) throws Exception {
@@ -35,10 +36,13 @@ public class AddressBookMain {
         do {
             System.out.println("\n Select the operation you want to perform : ");
             System.out.println(
-                    "1.Add Contact To Address Book\n Press Any Key To Exit Address book System");
+                    "1.Create table\n 2.Add contact\n3. Press Any Key To Exit Address book System");
             switch (scanner.nextInt()) {
                 case 1:
                     addressBook.createTable(con);
+                    break;
+                case 2:
+                    addressBook.addContact(con);
                     break;
                 default:
                     change = false;
